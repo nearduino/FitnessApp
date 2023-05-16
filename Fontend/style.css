@@ -1,0 +1,75 @@
+#pagetitle {
+    color: cornflowerblue;
+    text-align: center;
+    font-size: 60px;
+
+    border: 1px solid white;
+    padding: 10px;
+  }
+  
+#pagecontent {
+  width: auto;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh; */
+
+  border: 1px solid white;
+  padding: 10px;
+}
+
+  .first-layer {
+    display: flex;
+
+    
+
+    border: 1px solid white;
+    padding: 10px;
+  }
+    .search-box {
+      flex: 1;
+
+      border: 1px solid white;
+      padding: 10px;
+    }
+    .sign-links {
+      flex: 1;
+
+      border: 1px solid white;
+      padding: 10px;
+    }
+
+  .second-layer {
+    width: auto;
+    border-collapse: collapse;
+
+    border: 1px solid white;
+    padding: 10px;
+  }
+    table {
+
+      border: 1px solid white;
+      padding: 10px;
+    }
+    th, td {
+
+      border: 1px solid white;
+      padding: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+

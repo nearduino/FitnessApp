@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" async></script>
+    <!--With async, browser keeps parsing html, while
+    scrips are executing. This is modern aproach, instead
+    of putting script tag at the end ob body.-->
+    <title>Fitness App</title>
+</head>
+<body>
+    <h1 id="pagetitle">Fitness App</h1>
+
+	<div id="pagecontent">
+		<div class="first-layer">
+			<div class="search-box">
+				<form>
+					<input type="text" id="search-input" placeholder="Search...">
+				</form>
+			</div>
+			
+			<div class="sign-links">
+				<p>
+					<a href="@sign_in_page">Sign in</a> | 
+					<a href="@register_page">Register</a>
+				</p>    
+			</div>
+		</div>
+		
+		<div class="second-layer">
+			<table id="gym-table">
+				<thead>
+					<tr>
+						<th>Gym Name</th>
+						<th>City</th>
+						<th>Year of Opening</th>
+						<th>Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Gold's Gym</td>
+						<td>New York City</td>
+						<td>1965</td>
+						<td><button>Details</button></td>
+					</tr>
+					<tr>
+						<td>24 Hour Fitness</td>
+						<td>San Francisco</td>
+						<td>1983</td>
+						<td><button>Details</button></td>
+					</tr>
+					<tr>
+						<td>Planet Fitness</td>
+						<td>Dover</td>
+						<td>1992</td>
+						<td><button>Details</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+		
+</body>
+</html>
