@@ -6,4 +6,4 @@ Owners open gyms and hire trainers.
 Trainers post classes.
 Visitors sign up for classes and comment gyms.
 
-Frontend is VanillaJS and backend is C# (ASP.NET Core)
+Frontend is VanillaJS and backend is C# (ASP.NET Core).
