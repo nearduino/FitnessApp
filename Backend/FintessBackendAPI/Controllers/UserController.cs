@@ -16,13 +16,26 @@ namespace FintessBackendAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<User>> GetAll()
+        public IActionResult GetAll()
         {
             return Ok(_dbContext.Users.ToList());
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var user = _dbContext.Users.Find(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
         [HttpPost]
-        public IActionResult Register(User user)
+        public IActionResult Post(User user)
         {
             // Validate the user input
 
@@ -32,5 +45,44 @@ namespace FintessBackendAPI.Controllers
 
             return Ok("User registered successfully.");
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] User user)
+        {
+            if (user == null || user.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var existingUser = _dbContext.Users.Find(id);
+
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            existingUser.Username = user.Username;
+            existingUser.Password = user.Password;
+
+            _dbContext.Users.Update(existingUser);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var existingUser = _dbContext.Users.Find(id);
+
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.Users.Remove(existingUser);
+
+            return NoContent();
+        }
+
     }
 }
