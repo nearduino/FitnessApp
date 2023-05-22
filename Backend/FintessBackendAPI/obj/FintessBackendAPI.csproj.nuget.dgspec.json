@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\David\\OneDrive\\Documents\\My_Docs\\Fitness\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj": {}
+    "C:\\Users\\ndj\\Documents\\Projects\\FitnessApp\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David\\OneDrive\\Documents\\My_Docs\\Fitness\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj": {
+    "C:\\Users\\ndj\\Documents\\Projects\\FitnessApp\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\OneDrive\\Documents\\My_Docs\\Fitness\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj",
+        "projectUniqueName": "C:\\Users\\ndj\\Documents\\Projects\\FitnessApp\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj",
         "projectName": "FintessBackendAPI",
-        "projectPath": "C:\\Users\\David\\OneDrive\\Documents\\My_Docs\\Fitness\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj",
-        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\OneDrive\\Documents\\My_Docs\\Fitness\\FitnessApp\\Backend\\FintessBackendAPI\\obj\\",
+        "projectPath": "C:\\Users\\ndj\\Documents\\Projects\\FitnessApp\\FitnessApp\\Backend\\FintessBackendAPI\\FintessBackendAPI.csproj",
+        "packagesPath": "C:\\Users\\ndj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ndj\\Documents\\Projects\\FitnessApp\\FitnessApp\\Backend\\FintessBackendAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ndj\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,6 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

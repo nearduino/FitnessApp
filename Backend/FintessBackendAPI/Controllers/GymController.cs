@@ -1,6 +1,5 @@
-﻿using FintessBackendAPI.Models;
-using FintessBackendAPI.Repositories;
-using Microsoft.AspNetCore.Http;
+﻿using FintessBackendAPI.Data;
+using FintessBackendAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FintessBackendAPI.Controllers
@@ -9,15 +8,29 @@ namespace FintessBackendAPI.Controllers
     [ApiController]
     public class GymController : ControllerBase
     {
-        readonly IGymRepository _appRepository;
-        public GymController(IGymRepository appRepository)
+        readonly FitnessAppDbContext _dbContext;
+
+        public GymController(FitnessAppDbContext dbContext)
         {
-            _appRepository = appRepository;
+            _dbContext = dbContext;
         }
+
         [HttpGet]
         public ActionResult<List<Gym>> GetAll()
         {
-            return Ok(_appRepository.GetGyms());
+            return Ok(_dbContext.Gyms.ToList());
+        }
+
+        [HttpPost]
+        public IActionResult Post(Gym gym)
+        {
+            // Validate the gym input
+
+            // Store the gym in the database
+            _dbContext.Gyms.Add(gym);
+            _dbContext.SaveChanges();
+
+            return Ok("Gym added successfully.");
         }
     }
 }

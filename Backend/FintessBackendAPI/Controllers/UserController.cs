@@ -1,6 +1,5 @@
-﻿using FintessBackendAPI.Models;
-using FintessBackendAPI.Repositories;
-using Microsoft.AspNetCore.Http;
+﻿using FintessBackendAPI.Data;
+using FintessBackendAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FintessBackendAPI.Controllers
@@ -9,15 +8,29 @@ namespace FintessBackendAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        readonly IUserRepository _appRepository;
-        public UserController(IUserRepository appRepository)
+        readonly FitnessAppDbContext _dbContext;
+
+        public UserController(FitnessAppDbContext dbContext)
         {
-            _appRepository = appRepository;
+            _dbContext = dbContext;
         }
+
         [HttpGet]
         public ActionResult<List<User>> GetAll()
         {
-            return Ok(_appRepository.GetUsers());
+            return Ok(_dbContext.Users.ToList());
+        }
+
+        [HttpPost]
+        public IActionResult Register(User user)
+        {
+            // Validate the user input
+
+            // Store the user in the database
+            _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
+
+            return Ok("User registered successfully.");
         }
     }
 }

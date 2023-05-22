@@ -1,5 +1,4 @@
-using FintessBackendAPI.Repositories;
-using FintessBackendAPI.Repositories.Classes;
+using FintessBackendAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +9,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IGymRepository, GymRepository>();
+builder.Services.AddScoped<FitnessAppDbContext>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    // Call the DatabaseInitializer to perform initialization
+    DatabaseInitializer.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
