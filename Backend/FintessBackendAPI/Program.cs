@@ -11,6 +11,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<FitnessAppDbContext>();
 
+// Enable CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -29,6 +40,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+// Enable CORS middleware
+app.UseCors();
 
 app.UseAuthorization();
 

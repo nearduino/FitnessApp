@@ -12,17 +12,11 @@
     <div class="signup-window">
         <div class="signup-container">
           <h2>Sign Up</h2>
-          <form id="registerform" method="post" onsubmit="return handleFormSubmit(event)">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-      
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-      
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-      
-            <button type="submit">Sign Up</button>
+          <form id="registerForm">
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Register">
           </form>
         </div>
     </div> 
