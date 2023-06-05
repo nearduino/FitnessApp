@@ -1,6 +1,7 @@
 ﻿using FintessBackendAPI.Data;
 using FintessBackendAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FintessBackendAPI.Controllers
 {
@@ -84,5 +85,26 @@ namespace FintessBackendAPI.Controllers
             return NoContent();
         }
 
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] User user)
+        {
+            var regUser = _dbContext.Users.Where(u => u.Username == user.Username).FirstOrDefault();
+            
+            if (regUser != null)
+            {
+                if (regUser.Password == user.Password)
+                {
+                    return Ok($"User {user.Username} signed in.");
+                }
+                else
+                {
+                    return BadRequest("Wrong password!");
+                }
+            }
+            else
+            {
+                return BadRequest("User doesn't exist.");
+            }
+        }
     }
 }
