@@ -12,5 +12,6 @@ namespace FintessBackendAPI.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Gym> Gyms { get; set; }
+        public DbSet<User> LoggedUsers { get; set; }
     }
 }

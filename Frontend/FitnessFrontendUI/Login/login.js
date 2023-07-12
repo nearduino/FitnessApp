@@ -20,6 +20,7 @@ loginForm.password.value = "secretpassword";
     request.onload = function() {
       if (request.status === 200) {
         // User registration successful
+        request.getResponseHeader
         console.log('User logined successfully');
         // Redirect to another page or perform other actions
         window.location.href = "../index.html";

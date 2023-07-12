@@ -94,6 +94,7 @@ namespace FintessBackendAPI.Controllers
             {
                 if (regUser.Password == user.Password)
                 {
+                    _dbContext.LoggedUsers.Add(regUser);
                     return Ok($"User {user.Username} signed in.");
                 }
                 else
